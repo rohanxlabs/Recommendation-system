@@ -1,106 +1,107 @@
 Live link : https://recommendation-system-8z0w.onrender.com
 
+🎯 Recommendation System
 
-🎯 AI-Powered Recommendation System
-
-⚡ Intelligent Product Recommendations with RAG & LLMs
+⚡ Intelligent Item Suggestion using Similarity & Ranking
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?size=22&duration=3000&color=FF6F61&center=true&vCenter=true&width=700&lines=AI+Recommendation+System;RAG+Enhanced+Suggestions;From+Search+→+Understanding+→+Recommendation" />
+  <img src="https://readme-typing-svg.herokuapp.com?size=22&duration=3000&color=FF6F61&center=true&vCenter=true&width=700&lines=Recommendation+System;Similarity-Based+Suggestions;From+Data+→+Insight+→+Recommendation" />
 </p><p align="center">
   <img src="https://img.shields.io/badge/System-Recommendation-blue">
-  <img src="https://img.shields.io/badge/AI-RAG-orange">
-  <img src="https://img.shields.io/badge/LLM-Powered-green">
-  <img src="https://img.shields.io/badge/API-FastAPI-purple">
+  <img src="https://img.shields.io/badge/Type-Content Based-orange">
+  <img src="https://img.shields.io/badge/Backend-FastAPI-green">
+  <img src="https://img.shields.io/badge/Status-Working-success">
 </p>---
 
 🎯 Problem Statement
 
-Traditional recommendation systems:
+Modern platforms like:
 
-- ❌ Only match keywords or basic similarity
-- ❌ Cannot explain recommendations
-- ❌ Lack contextual understanding
+- Amazon
+- Netflix
+- YouTube
 
-This project solves these limitations using:
+rely heavily on recommendation systems to:
 
-👉 Retrieval-Augmented Generation (RAG)
-👉 LLM-based reasoning for better recommendations
+- Improve user experience
+- Increase engagement
+- Boost conversions
+
+This project implements a basic recommendation engine to demonstrate how such systems work at a foundational level.
 
 ---
 
-💡 What Makes This System Unique
+💡 System Type
 
-Unlike basic recommenders, this system:
+This project is based on:
 
-✔ Retrieves relevant products using similarity search
-✔ Uses LLM to enhance and explain recommendations
-✔ Supports both standard + RAG-based recommendations
-✔ Provides context-aware suggestions instead of static results
+👉 Content-Based / Similarity-Based Recommendation
+
+It works by:
+
+- Finding similar items
+- Ranking them based on relevance
+- Returning top matches
 
 ---
 
 🏗️ System Architecture
 
-User Query
-    ↓
-Query Processing
-    ↓
-Embedding Generation
-    ↓
-Similarity Search (Vector DB)
-    ↓
-Top-K Products Retrieved
-    ↓
-LLM Enhancement (RAG)
-    ↓
-Final Recommendations + Explanation
+User Input
+   ↓
+Feature Extraction
+   ↓
+Similarity Calculation
+   ↓
+Ranking
+   ↓
+Top-N Recommendations
 
 ---
 
 ⚙️ Core Components
 
-🔍 Recommendation Engine
+🔍 Feature Processing
 
-- Matches user queries with products
-- Uses similarity-based ranking
+- Extract item features
+- Convert into comparable format
 
-🧠 RAG Layer
+📊 Similarity Engine
 
-- Enhances recommendations using LLM
-- Generates human-like explanations
+- Compute similarity between items
+- (e.g., cosine similarity / distance metrics)
 
-🗂️ Vector Database
+📈 Ranking System
 
-- Stores embeddings of product data
-- Enables fast semantic search
+- Rank items based on similarity score
+- Select top-N recommendations
 
 🌐 API Layer
 
 - FastAPI backend
-- Handles user queries and responses
+- Handles user queries
 
 ---
 
-🔄 System Workflow
+🔄 Workflow
 
-1. User inputs query
-2. System retrieves relevant products
-3. Top-K results selected
-4. LLM enhances recommendations
-5. Final response returned
+1. Load dataset
+2. Process features
+3. Compute similarity matrix
+4. Receive user query
+5. Retrieve similar items
+6. Return recommendations
 
 ---
 
 🛠️ Tech Stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,fastapi,git,docker" />
+  <img src="https://skillicons.dev/icons?i=python,fastapi,git" />
 </p>- Python
+- Pandas / NumPy
+- Scikit-learn
 - FastAPI
-- Vector Database (FAISS)
-- LLM APIs (OpenAI / HuggingFace)
-- Embeddings (Word2Vec / Transformers)
 
 ---
 
@@ -108,27 +109,41 @@ Final Recommendations + Explanation
 
 recommendation-system/
 │
-├── data/                → Product dataset
-├── vector_db/           → FAISS index & embeddings
-├── recommend.py         → Basic recommendation logic
-├── rag_recommend.py     → RAG-based enhancement
-├── create_vector_db.py  → Embedding pipeline
-├── main.py              → FastAPI backend
-├── frontend.html        → User interface
+├── data/                → Dataset
+├── model/               → Similarity logic
+├── utils/               → Helper functions
+├── main.py              → API server
+├── frontend.html        → UI
 └── requirements.txt
 
 ---
 
-📊 Why RAG in Recommendation?
+📊 Key Concepts Demonstrated
 
-Traditional systems rank items.
-RAG systems understand + explain recommendations.
+Concept| Explanation
+Content-Based Filtering| Recommend similar items
+Similarity Metrics| Measure item closeness
+Ranking| Select best results
+Feature Engineering| Represent items numerically
 
-LLMs can:
+---
 
-- Act as ranking engines
-- Generate explanations
-- Improve personalization dynamically
+📌 Limitations
+
+- ❌ No personalization (same result for all users)
+- ❌ No learning from user behavior
+- ❌ No collaborative filtering
+- ❌ No real-time feedback loop
+
+---
+
+🚀 Future Improvements
+
+- Add collaborative filtering
+- Add user-based personalization
+- Hybrid recommendation system
+- Integrate with real dataset
+- Add ML-based ranking
 
 ---
 
@@ -141,29 +156,9 @@ uvicorn main:app --reload
 
 ---
 
-🌐 API Endpoints
+🌐 API
 
-POST /recommend        → Basic recommendations
-POST /rag_recommend    → AI-enhanced recommendations
-
----
-
-🚀 Future Improvements
-
-- Personalized recommendations (user history)
-- Hybrid filtering (collaborative + content-based)
-- Real product dataset integration
-- Real-time feedback learning
-- Scalable cloud deployment
-
----
-
-⚠️ Limitations
-
-- Uses mock/static product data
-- Limited personalization
-- Depends on retrieval quality
-- LLM cost & latency considerations
+http://localhost:8000
 
 ---
 
@@ -174,14 +169,9 @@ GitHub: https://github.com/rohanxlabs
 
 ---
 
-⭐ Why This Project Stands Out
+⭐ Why This Project Matters
 
-This project bridges the gap between:
-
-👉 Traditional Recommendation Systems
-👉 Modern AI-powered intelligent systems
-
-It demonstrates how to build next-generation recommendation engines.
+This project focuses on core recommendation system fundamentals, which are the foundation of all large-scale recommender systems.
 
 ---
 
