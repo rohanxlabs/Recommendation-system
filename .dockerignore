@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+*.md
+docs/
+
+# Data (exclude raw data, keep processed for model)
+data/raw/
+
+# Scripts (not needed in container)
+scripts/
+
+# Tests (not needed in production)
+tests/
+
+# Misc
+.DS_Store
+*.log
+.env
